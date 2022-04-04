@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::post('/save',[HomeController::class,'save'])-> name('save');
+Route::get('/',[HomeController::class,'index'])-> name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

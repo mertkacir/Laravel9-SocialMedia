@@ -7,25 +7,27 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 	<title>@yield("title")</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
-    
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+    <link href="{{asset('assets')}}/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="fonts/{{asset('assets')}}css/font-awesome.min.{{asset('assets')}}css" rel="stylesheet">
+<link href="{{asset('assets')}}/css/animate.min.{{asset('assets')}}css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('assets')}}/css/main.min.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/color.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/responsive.css">
 @yield("head")
 </head>
 <body>
-<h1>Header</h1>
+@include("home.header")
+
 
 @section('sidebar')
-    This is the master sidebar.
+    @include("home.sidebar")
 @show
-
-<div class="container">
-    @yield('content')
-</div>
-<h1>Footer</h1>
+@yield('content')
+@include("home.footer")
 @yield('foot')
 </body>
 </html>
