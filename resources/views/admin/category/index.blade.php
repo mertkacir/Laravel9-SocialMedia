@@ -4,8 +4,10 @@
 <!-- Content Start -->
 <div class="content">
     <!-- Sale & Revenue Start -->
-    <div class="col-sm-12 col-xl-6">
+    <div class="col-sm-25 col-xl-20">
+    <a href="{{route('admin.category.create')}}" class="btn btn-primary rounded-pill m-2">Add Category</a>
                         <div class="bg-light rounded h-100 p-4">
+
                             <h6 class="mb-4">Category List</h6>
                             <table class="table">
                                 <thead>
@@ -16,8 +18,8 @@
                                         <th scope="col">Description</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Status</th>
-                                        <th style="width : 40px">Edit</th>
-                                        <th style="width : 40px">Delete</th>
+                                        <th style="width : 5px">Edit</th>
+                                        <th style="width : 5px">Delete</th>
 
                                     </tr>
                                 </thead>
@@ -32,8 +34,8 @@
                                         <td>{{$rs->description}}</td>
                                         <td>{{$rs->image}}</td>
                                         <td>{{$rs->status}}</td>
-                                        <td><a href="/admin/category/edit{{$rs->id}}" class="btn btn-primary rounded-pill m-2">Edit</a></td>
-                                        <td><a href="/admin/category/delete{{$rs->id}}" class="btn btn-danger rounded-pill m-2">Delete</a></td>
+                                        <td><a href="{{route('admin.category.edit',['id'=> $rs->id])}}" class="btn btn-primary rounded-pill m-2">Edit</a></td>
+                                        <td><a href="{{route('admin.category.destroy',['id'=> $rs->id])}}" class="btn btn-danger rounded-pill m-2">Delete</a></td>
                                     </tr>
 
                                     @endforeach
