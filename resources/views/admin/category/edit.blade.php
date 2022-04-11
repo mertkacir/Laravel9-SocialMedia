@@ -5,13 +5,20 @@
 <div class="content">
     <h1 class="mb-4">Edit Category: {{$data->title}}</h1>
 <h6 class="mb-4">Basic Form</h6>
-     <form role="form" action="{{route('admin.category.update',['id'=> $data->id])}}" method="POST">
+     <form role="form" action="{{route('admin.category.update',['id'=> $data->id])}}" method="POST" enctype="multipart/form-data">
          @csrf
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" name="email" value="{{$data->email}}" aria-describedby="emailHelp">
-                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                                    </div>
+                                    <div class="form-group">
+                                        <label>Parent Category</label>
+
+                                        <select class="form-control select2" name="parent_id">
+                                        <option value="0" selected="selected">Main Category</option>
+                                    @foreach ($datalist as $rs)
+                                        <option value="{{ $rs->id }}" @if($rs->id == $data->parent_id) selected="selected" @endif>
+                                            {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</option>
+
+                                    @endforeach
+
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Title</label>
@@ -40,7 +47,7 @@
                             <h6 class="mb-3">Image</h6>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Add Image</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" type="file" name="image" id="formFile">
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </div>
