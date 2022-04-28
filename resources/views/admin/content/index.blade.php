@@ -29,7 +29,7 @@
 
                                     <tr>
                                         <th scope="row">{{$rs->id}}</th>
-                                        <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
+                                        <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->description}}</td>
                                         <td>
@@ -40,7 +40,9 @@
                                         </td>
                                         <td>{{$rs->status}}</td>
                                         <td><a href="{{route('admin.content.edit',['id'=> $rs->id])}}" class="btn btn-primary rounded-pill m-2">Edit</a></td>
-                                        <td><a href="{{route('admin.content.destroy',['id'=> $rs->id])}}" class="btn btn-danger rounded-pill m-2">Delete</a></td>
+                                        <td><a href="{{route('admin.content.destroy',['id'=> $rs->id])}}" class="btn btn-danger rounded-pill m-2"
+                                            onclick="return confirm('Deleting!! Are you sure ?')">Delete</a></td>
+
                                     </tr>
 
                                     @endforeach
