@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminPanel\CategoryController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\AdminContentController;
 
@@ -39,6 +40,14 @@ Route::prefix('/content')->name('content.')->controller(AdminContentController::
     Route::get('/edit/{id}','edit')-> name('edit');
     Route::post('/update/{id}','update')-> name('update');
     Route::get('/destroy/{id}','destroy')-> name('destroy');
+
+});
+//************** Admin Image Gallery Routes *******************
+Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function (){
+    Route::get('/{pid}','index')-> name('index');
+    Route::post('/store/{pid}','store')-> name('store');
+    Route::post('/update/{pid}/{id}','update')-> name('update');
+    Route::get('/destroy/{pid}/{id}','destroy')-> name('destroy');
 
 });
 });

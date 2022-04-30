@@ -17,6 +17,7 @@
                                         <th scope="col">Title</th>
                                         <th scope ="col">Description</th>
                                         <th scope="col">Image</th>
+                                        <th scope="col">Image Gallery</th>
                                         <th scope="col">Status</th>
                                         <th style="width : 5px">Edit</th>
                                         <th style="width : 5px">Delete</th>
@@ -29,7 +30,7 @@
 
                                     <tr>
                                         <th scope="row">{{$rs->id}}</th>
-                                        <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
+                                        <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->description}}</td>
                                         <td>
@@ -38,6 +39,10 @@
 
                                             @endif
                                         </td>
+                                        <td><a href="{{route('admin.image.index',['pid'=> $rs->id])}}"
+                                            onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                                            <img src="{{asset('assets')}}/admin/img/gallery.png" style="height: 50px;"></td>
+                                        </a>
                                         <td>{{$rs->status}}</td>
                                         <td><a href="{{route('admin.content.edit',['id'=> $rs->id])}}" class="btn btn-primary rounded-pill m-2">Edit</a></td>
                                         <td><a href="{{route('admin.content.destroy',['id'=> $rs->id])}}" class="btn btn-danger rounded-pill m-2"
