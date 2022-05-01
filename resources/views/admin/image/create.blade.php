@@ -1,5 +1,8 @@
 @extends('layouts.adminbase')
 @section('title','Add Category')
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 @section('content')
 <!-- Content Start -->
 <div class="content">
@@ -31,6 +34,16 @@
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Description</label>
                                     <input type="text" class="form-control" name="description" id="description" aria-describedby="description">
+                                    <script>
+                                        ClassicEditor
+                                                .create( document.querySelector( '#description' ) )
+                                                .then( editor => {
+                                                        console.log( editor );
+                                                } )
+                                                .catch( error => {
+                                                        console.error( error );
+                                                } );
+                                </script>
                                 </div>
 
                                 <div class="mb-3 form-check">
@@ -41,6 +54,7 @@
                                         <option>False</option>
                                     </select>
                                 </div>
+
 
                             <div class="col-sm-12 col-xl-6">
 
