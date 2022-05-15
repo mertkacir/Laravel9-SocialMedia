@@ -26,10 +26,6 @@
 												<a href="inbox.html" title="">Inbox</a>
 											</li>
 											<li>
-												<i class="ti-files"></i>
-												<a href="fav-page.html" title="">My pages</a>
-											</li>
-											<li>
 												<i class="ti-user"></i>
 												<a href="timeline-friends.html" title="">friends</a>
 											</li>
@@ -48,14 +44,6 @@
 											<li>
 												<i class="ti-bell"></i>
 												<a href="notifications.html" title="">Notifications</a>
-											</li>
-											<li>
-												<i class="ti-share"></i>
-												<a href="people-nearby.html" title="">People Nearby</a>
-											</li>
-											<li>
-												<i class="fa fa-bar-chart-o"></i>
-												<a href="insights.html" title="">insights</a>
 											</li>
 											<li>
 												<i class="ti-power-off"></i>

@@ -22,6 +22,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //************** Admin Panel Routes *******************
 Route::prefix('/admin')->name('admin.')->group(function (){
     Route::get('/',[AdminHomeController::class, 'index'])-> name('index');
+//************** General Routes *******************
+    Route::get('/setting',[AdminHomeController::class, 'setting'])-> name('setting');
 //************** Admin Category Routes *******************
 Route::prefix('/category')->name('category.')->controller(CategoryController::class)->group(function (){
     Route::get('/','index')-> name('index');
