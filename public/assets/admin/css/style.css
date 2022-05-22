@@ -85,7 +85,9 @@
     background: #FFFFFF;
     transition: 0.5s;
 }
-
+#ms-3{
+    width: 60%;
+}
 @media (min-width: 992px) {
     .sidebar {
         margin-left: 0;

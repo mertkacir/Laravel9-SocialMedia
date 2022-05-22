@@ -8,7 +8,7 @@
                         <div class="col-12 col-sm-6 text-center text-sm-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                             Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            </br>
+
                             Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
                         </div>
                     </div>
@@ -26,6 +26,8 @@
     <script src="{{asset('assets')}}/admin/lib/tempusdominus/js/moment.min.js"></script>
     <script src="{{asset('assets')}}/admin/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="{{asset('assets')}}/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="{{asset('assets')}}/admin/js/main.js"></script>

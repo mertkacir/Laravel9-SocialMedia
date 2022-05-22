@@ -21,4 +21,9 @@ class HomeController extends Controller
        }
     return view("admin.setting",['data' => $data]);
   }
+  public function settingUpdate(Request $request)
+  {
+      echo "Save Settings";
+
+  }
 }
