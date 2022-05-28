@@ -18,7 +18,7 @@
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                             <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
                                             <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Social Media</button>
-                                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">About Us</button>
+                                            <button class="nav-link" id="custom-tabs-one-about" href="#custom-tabs-one-about" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">About Us</button>
                                             <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">References</button>
                                             <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
                                         </div>
@@ -44,17 +44,19 @@
                                                 <option>False</option>
                                             </select>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">About Us</label>
-                                        <textarea id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
+                                    <div class="tab-pane fade" id="custom-tabs-one-about" role="tabpanel" aria-labelledby="custom-tabs-one-about">
+                                        <div class="form-group"
+                                            <label>About Us</label>
+                                            <textarea id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Contact</label>
-                                        <textarea id="aboutus" name="aboutus">{{$data->contact}}</textarea>
+                                        <textarea id="contact" name="contact">{{$data->contact}}</textarea>
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="nav nav-tabs" id="nav-tab">
                                         <label for="exampleInputEmail1" class="form-label">References</label>
-                                        <textarea id="aboutus" name="aboutus">{{$data->references}}</textarea>
+                                        <textarea id="references" name="references">{{$data->references}}</textarea>
                                     </div>
                                     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
