@@ -15,7 +15,7 @@ class HomeController extends Controller
        $data= Setting::first();
        if($data === null){
            $data = new Setting();
-           $data -> title = 'Project Title';
+           $data -> title = 'Socialize';
            $data -> save();
            $data= Setting::first();
        }
@@ -23,7 +23,17 @@ class HomeController extends Controller
   }
   public function settingUpdate(Request $request)
   {
-      echo "Save Settings";
+      $id=$request->input('id');
+      $data = Setting::find($id);
+      $data -> aboutus = $request -> input('aboutus');
+      $data -> contact = $request -> input('contact');
+      $data -> references = $request -> input('references');
+      $data -> title = $request -> input('title');
+      $data -> keywords = $request -> input('keywords');
+      $data -> description = $request -> input('description');
+      $data -> status = $request -> input('status');
+      $data -> save();
+      return redirect()->route('admin.setting');
 
   }
 }

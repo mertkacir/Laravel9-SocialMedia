@@ -1,5 +1,8 @@
 @extends('layouts.adminbase')
 @section('title','Edit Content')
+@section('head')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js">
+@endsection
 @section('content')
 <!-- Content Start -->
 <div class="content">

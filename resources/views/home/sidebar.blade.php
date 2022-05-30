@@ -5,6 +5,9 @@
 
 		<div class="top-area">
 			<ul class="main-menu">
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="{{route('about')}}">About Us</a></li>
+                <li><a href="{{route('references')}}">References</a></li>
 				<li>
 					<a href="#" title="">Home</a>
 					<ul>
@@ -49,7 +52,7 @@
 					<a href="#" title="">more pages</a>
 					<ul>
 						<li><a href="404.html" title="">404 error page</a></li>
-						<li><a href="about.html" title="">about</a></li>
+						<li><a href="{{route('about')}}">About Us</a></li>
 						<li><a href="contact.html" title="">contact</a></li>
 						<li><a href="faq.html" title="">faq's page</a></li>
 						<li><a href="insights.html" title="">insights</a></li>

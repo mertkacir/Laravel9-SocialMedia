@@ -1,6 +1,9 @@
 @extends('layouts.frontbase')
 
 @section('title', 'Socialize')
+@section('description', $setting->description)
+@section('keywords', $setting->keywords)
+@section('icon',Storage::url($setting->icon) )
 
 
 

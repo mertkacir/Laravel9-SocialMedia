@@ -13,7 +13,12 @@ use App\Http\Controllers\AdminPanel\AdminContentController;
 Route::get('/welcome', function () {
     return view('welcome');
 });
+//************** Home Page Routes *******************
 Route::get('/',[HomeController::class,'index'])-> name('home');
+Route::get('/about',[HomeController::class,'about'])-> name('about');
+Route::get('/references',[HomeController::class,'references'])-> name('references');
+Route::get('/contact',[HomeController::class,'contact'])-> name('contact');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
