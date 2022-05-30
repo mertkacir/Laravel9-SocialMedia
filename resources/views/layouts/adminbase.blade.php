@@ -29,6 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('assets')}}/admin/css/style.css" rel="stylesheet">
+    <link rel="icon" href="{{asset('assets')}}/images/letter-s.png" type="image/png" sizes="16x16">
     @yield('head')
 </head>
 <body>
