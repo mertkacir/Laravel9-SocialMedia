@@ -27,29 +27,32 @@
 										<span>Send us a message</span>
 										<i><img src="images/envelop.png" alt=""></i>
 									</div>
-									<form method="post">
+                                    @include('home.messages')
+									<form method="post" action="{{route("storemessage")}}">
+                                        @csrf
 										<div class="form-group">
-										  <input type="text" id="input" required="required"/>
+										  <input type="text" name="name" id="input" required="required"/>
 										  <label class="control-label" for="input">First & Last Name</label><i class="mtrl-select"></i>
 										</div>
 										<div class="form-group">
-										  <input type="text" required="required"/>
+										  <input type="text" name="email" required="required"/>
 										  <label class="control-label" for="input"><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e1b333f37321e">[email&#160;protected]</a></label><i class="mtrl-select"></i>
 										</div>
 										<div class="form-group">
-										  <input type="text" required="required"/>
+										  <input type="text" name="phone" required="required"/>
 										  <label class="control-label" for="input">Phone No.</label><i class="mtrl-select"></i>
 										</div>
 										<div class="form-group">
-										  <input type="text" required="required"/>
-										  <label class="control-label" for="input">Company</label><i class="mtrl-select"></i>
+										  <input type="text" name="subject" required="required"/>
+										  <label class="control-label" for="input">Subject</label><i class="mtrl-select"></i>
 										</div>
 										<div class="form-group">
-										  <textarea rows="4" id="textarea" required="required"></textarea>
+										  <textarea rows="4" id="textarea" name="message" required="required"></textarea>
 										  <label class="control-label" for="textarea">Message</label><i class="mtrl-select"></i>
 										</div>
 										<div class="submit-btns">
-											<button class="mtr-btn signup" type="button"><i class="fa fa-paper-plane"></i></button>
+											<button type="submit" class="btn btn-primary">Send Message</button><i class="fa fa-paper-plane"></i></button>
+
 										</div>
 									</form>
 								</div>

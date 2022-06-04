@@ -6,9 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\AdminContentController;
-
-
-
+use App\Http\Controllers\AdminPanel\MessageController;
+use App\Http\Controllers\MessageController as ControllersMessageController;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -18,6 +17,7 @@ Route::get('/',[HomeController::class,'index'])-> name('home');
 Route::get('/about',[HomeController::class,'about'])-> name('about');
 Route::get('/references',[HomeController::class,'references'])-> name('references');
 Route::get('/contact',[HomeController::class,'contact'])-> name('contact');
+Route::post('/storemessage',[HomeController::class,'storemessage'])-> name('storemessage');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -57,6 +57,15 @@ Route::prefix('/image')->name('image.')->controller(ImageController::class)->gro
     Route::post('/store/{pid}','store')-> name('store');
     Route::post('/update/{pid}/{id}','update')-> name('update');
     Route::get('/destroy/{pid}/{id}','destroy')-> name('destroy');
+
+});
+
+//************** Admin Message Routes *******************
+Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function (){
+    Route::get('/','index')-> name('index');
+    Route::get('/show/{id}','show')-> name('show');
+    Route::get('/update/{id}','update')-> name('update');
+    Route::get('/destroy/{id}','destroy')-> name('destroy');
 
 });
 });

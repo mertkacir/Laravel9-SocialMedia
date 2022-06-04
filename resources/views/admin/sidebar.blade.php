@@ -20,7 +20,7 @@
                     <a href="/admin/category" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Category</a>
                     <a href="/admin/comment" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Comments</a>
                     <a href="/admin/faq" class="nav-item nav-link"><ion-icon size="large" name="help-circle-outline" style="vertical-align: middle;"></ion-icon></i> FAQ</a>
-                    <a href="/admin/messages" class="nav-item nav-link"><ion-icon size="large" name="mail-outline" style="vertical-align: middle;"></ion-icon></i> Messages</a>
+                    <a href="{{route('admin.message.index')}}" class="nav-item nav-link"><ion-icon size="large" name="mail-outline" style="vertical-align: middle;"></ion-icon></i> Messages</a>
                     <a href="/admin/users" class="nav-item nav-link"><ion-icon size="large" name="people-outline" style="vertical-align: middle;"></ion-icon></i> Users</a>
                     <a href="/admin/social" class="nav-item nav-link"><ion-icon size="large" name="share-social-outline" style="vertical-align: middle;"></ion-icon></i> Social</a>
                     <a href="/admin/setting" class="nav-item nav-link"><ion-icon size="large" name="settings-outline" style="vertical-align: middle;"></ion-icon> Settings</a>
