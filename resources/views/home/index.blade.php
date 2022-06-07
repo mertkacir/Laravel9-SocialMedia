@@ -313,7 +313,7 @@
 														<img src="{{asset('assets')}}/images/resources/comet-1.jpg" alt="">
 													</div>
 													<div class="post-comt-box">
-														<form method="post">
+														<form method="post" action="{{route('storecomment')}}">
 															<textarea placeholder="Post your comment"></textarea>
 															<div class="add-smiles">
 																<span class="em em-expressionless" title="add icon"></span>

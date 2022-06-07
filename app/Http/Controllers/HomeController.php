@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Setting;
 use App\Models\Message;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -69,6 +71,22 @@ class HomeController extends Controller
         $data->save();
 
         return redirect()->route('contact')->with('info','Your message has been sent,Thank you.');
+
+
+    }
+
+    public function storecomment(Request $request)
+    {
+        $data = new Comment();
+        $data->user_id = Auth::id();
+        $data->content_id = $request->input('content_id');
+        $data->subject = $request->input('subject');
+        $data->review = $request->input('review');
+        $data->rate = $request->input('rate');
+        $data->ip = request()->ip();
+        $data->save();
+
+        return redirect()->route('content',['id' => $request->input('content_id')])->with('info','Your comment has been sent,Thank you.');
 
 
     }
