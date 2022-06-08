@@ -10,6 +10,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     <h3>Detail User Data</h3>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}"
+                        class="text-decoration-none">Users</a></li>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive" >
@@ -32,6 +34,8 @@
                                     <th>Roles</th>
                                     <td>@foreach ($data->roles as $role )
                                         {{$role->name}}
+                                        <a href="{{route('admin.user.destroyrole',['uid'=> $data->id, 'rid' => $role->id])}}">[x]</a>
+
                                     @endforeach</td>
                                 </tr>
                                 <tr>
@@ -43,7 +47,7 @@
                                     <td>{{$data->updated_at}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Admin Note:</th>
+                                    <th>Add Role to User</th>
                                     <td>
                                         <form role="form" action="{{route('admin.user.addrole',['id'=>$data->id ])}}" method="post" >
                                             @csrf

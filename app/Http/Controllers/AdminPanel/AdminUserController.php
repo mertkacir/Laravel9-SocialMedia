@@ -63,9 +63,10 @@ class AdminUserController extends Controller
     public function addrole(Request $request, $id)
     {
         $data= new RoleUser();
-        $data->note = $request->note;
+        $data->user_id = $id;
+        $data->role_id = $request->role_id;
         $data->save();
-        return redirect(route('admin.message.show',['id'=>$id]));
+        return redirect(route('admin.user.show',['id'=>$id]));
     }
 
     /**
@@ -101,4 +102,12 @@ class AdminUserController extends Controller
     {
         //
     }
+
+    public function destroyrole($uid, $rid)
+    {
+        $user=User::find($uid);
+        $user->roles()->detach($rid);
+        return redirect(route('admin.user.show',['id'=>$uid]));
+    }
+
 }

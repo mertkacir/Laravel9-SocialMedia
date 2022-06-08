@@ -100,6 +100,8 @@ Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->g
     Route::post('/update/{id}','update')-> name('update');
     Route::get('/destroy/{id}','destroy')-> name('destroy');
     Route::post('/addrole/{id}','addrole')-> name('addrole');
+    Route::get('/destroyrole/{uid}/{rid}','destroyrole')-> name('destroyrole');
+
 
 
 });
