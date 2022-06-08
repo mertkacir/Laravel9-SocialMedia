@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\AdminContentController;
+use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\MessageController as ControllersMessageController;
@@ -23,7 +24,10 @@ Route::get('/faq',[HomeController::class,'faq'])-> name('faq');
 Route::post('/storecomment',[HomeController::class,'storecomment'])-> name('storecomment');
 Route::view('/loginuser','home.login');
 Route::view('/registeruser','home.register');
+Route::view('/loginadmin','admin.login');
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
+Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name('loginadmincheck');
+
 
 
 
@@ -86,6 +90,17 @@ Route::prefix('/faq')->name('faq.')->controller(FaqController::class)->group(fun
     Route::get('/show/{id}','show')-> name('show');
     Route::post('/update/{id}','update')-> name('update');
     Route::get('/destroy/{id}','destroy')-> name('destroy');
+
+});
+
+//************** Admin User Routes *******************
+Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function (){
+    Route::get('/','index')-> name('index');
+    Route::get('/show/{id}','show')-> name('show');
+    Route::post('/update/{id}','update')-> name('update');
+    Route::get('/destroy/{id}','destroy')-> name('destroy');
+    Route::post('/addrole/{id}','addrole')-> name('addrole');
+
 
 });
 });
