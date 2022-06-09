@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\MessageController as ControllersMessageController;
+use App\Http\Controllers\UserController;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -35,6 +36,15 @@ Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name(
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 });
+
+//************** User Auth Control *******************
+Route::middleware('auth')->group(function(){
+
+    //************** User Panel Routes *******************
+    Route::prefix('/userpanel')->name('userpanel.')->controller(UserController::class)->group(function (){
+        Route::get('/','index')-> name('index');
+
+    });
 
 //************** Admin Panel Routes *******************
 Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function (){
@@ -104,5 +114,6 @@ Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->g
 
 
 
+});
 });
 });

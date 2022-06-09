@@ -33,7 +33,7 @@
 						<li><a href="edit-account-setting.html" title="">edit account setting</a></li>
 						<li><a href="edit-interest.html" title="">edit-interest</a></li>
 						<li><a href="edit-password.html" title="">edit-password</a></li>
-						<li><a href="edit-profile-basic.html" title="">edit profile basics</a></li>
+						<li><a href="/userpanel" title="">edit profile basics</a></li>
 						<li><a href="edit-work-eductation.html" title="">edit work educations</a></li>
 						<li><a href="messages.html" title="">message box</a></li>
 						<li><a href="inbox.html" title="">Inbox</a></li>
@@ -51,7 +51,7 @@
 					<a href="#" title=""><span class="status f-away"></span>away</a>
 					<a href="#" title=""><span class="status f-off"></span>offline</a>
 					<a href="#" title=""><i class="ti-user"></i> view profile</a>
-					<a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
+					<a href="{{route('userpanel.index')}}" title=""><i class="ti-pencil-alt"></i>edit profile</a>
 					<a href="#" title=""><i class="ti-target"></i>activity log</a>
 					<a href="#" title=""><i class="ti-settings"></i>account setting</a>
 					<a href="{{route('faq')}}">log out</a>
