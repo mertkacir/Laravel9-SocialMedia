@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('friendships', function (Blueprint $table) {
-            $table->string('request')->unsigned();
-            $table->string('accept')->unsigned();
+        Schema::create('friends', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id_1')->unsigned();
+            $table->integer('user_id_2')->unsigned();
+            $table->boolean('approved')->default(true);
+            $table->timestamps();
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('friendships');
+        Schema::dropIfExists('friends');
     }
 };

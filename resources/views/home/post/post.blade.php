@@ -18,28 +18,11 @@
                         <div class="mb-3">
                             <label class="label">Post Body: </label>
                             <textarea name="body" rows="10" cols="30" class="form-control" required></textarea>
-                            <div class="attachments">
-                                <ul>
-                                    <li>
-                                        <i class="fa fa-music"></i>
-                                        <label class="fileContainer">
-                                            <input type="file">
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-image"></i>
-                                        <label class="fileContainer">
-                                            <input type="file">
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-video-camera"></i>
-                                        <label class="fileContainer">
-                                            <input type="file">
-                                        </label>
-                                    </li>
-                                </ul>
-                        </div>
+                            <h6 class="mb-3">Image</h6>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Add Image</label>
+                                <input class="form-control" type="file" name="image" id="formFile">
+                            </div>
 
                         <div class="mb-3">
                             <input type="submit" class="btn btn-success" />

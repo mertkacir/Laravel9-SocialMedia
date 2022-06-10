@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('parent_id');
-            $table->string('title');
-            $table->string('keywords')->nullable();
-            $table->string('description')->nullable();
-            $table->string('image')->nullable();
+        Schema::create('comments', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('status');
+            $table->integer('parent_id')->unsigned()->nullable();
+            $table->text('body');
+            $table->integer('commentable_id')->unsigned();
+            $table->string('commentable_type');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('comments');
     }
 };

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Like as ModelsLike;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -66,13 +67,20 @@ class User extends Authenticatable
 
     public function friends()
     {
-        return $this->belongsToMany(User::class,'friendships','request','accept');
+        return $this->hasMany('App\Friend');
+    }
+    public function posts() {
+        return $this->hasMany(Post::class);
     }
 
-    public function toArray()
-    {
-        return[
-            'friends'=>$this->friends,
-        ];
+    public function comments() {
+        return $this->hasMany(Comment::class);
     }
+    public function categories() {
+        return $this->hasMany(Category::class);
+    }
+    public function likes() {
+        return $this->hasMany(Like::class);
+    }
+
 }

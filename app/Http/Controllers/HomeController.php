@@ -6,8 +6,7 @@ use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Setting;
 use App\Models\Message;
-
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -117,5 +116,12 @@ class HomeController extends Controller
         ])->onlyInput('email');
     }
 
-
+    public function listUser() {
+        $users = User::orderBy('id', 'desc')->paginate(40);
+        return view('user.index')->with('users',$users);
+    }
+    public function showUser($id) {
+        $user = User::find($id);
+        return view('user.show')->with('user',$user);
+    }
 }

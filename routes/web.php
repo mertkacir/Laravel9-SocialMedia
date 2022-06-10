@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminPanel\AdminContentController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\MessageController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MessageController as ControllersMessageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -31,7 +32,21 @@ Route::view('/loginadmin','admin.login')-> name('loginadmin');
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
 Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name('loginadmincheck');
 Route::get('/posts',[PostController::class,'index'])->name('posts');
+Route::post('/comment/store',[CommentController::class,'store'])->name('store');
+Route::get('/users',[HomeController::class,'listUser']);
+Route::get('/users/{id}',[HomeController::class,'showUser'])->name('user.show');
 
+//************** Comment Routes *******************
+Route::prefix('/comment')->name('comment.')->controller(CommentController::class)->group(function (){
+Route::post('/store','store')->name('store');
+
+});
+
+//************** Reply Routes *******************
+Route::prefix('/reply')->name('reply.')->controller(CommentController::class)->group(function (){
+Route::post('/store', 'store')->name('store');
+
+});
 
 //************** Post Routes *******************
 Route::prefix('/post')->name('post.')->controller(PostController::class)->group(function (){
@@ -40,6 +55,7 @@ Route::get('/','index')-> name('index');
 Route::get('/create','create')->name('create');
 Route::post('/store','store')->name('store');
 Route::get('/show/{id}','show')->name('show');
+Route::get('/edit/{id}','edit')->name('edit');
 Route::get('/destroy/{id}','destroy')-> name('destroy');
 
 });
