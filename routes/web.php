@@ -10,7 +10,9 @@ use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\MessageController as ControllersMessageController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -28,8 +30,19 @@ Route::view('/registeruser','home.register')-> name('registeruser');
 Route::view('/loginadmin','admin.login')-> name('loginadmin');
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
 Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name('loginadmincheck');
+Route::get('/posts',[PostController::class,'index'])->name('posts');
 
 
+//************** Post Routes *******************
+Route::prefix('/post')->name('post.')->controller(PostController::class)->group(function (){
+Route::get('/posts','posts')->name('posts');
+Route::get('/','index')-> name('index');
+Route::get('/create','create')->name('create');
+Route::post('/store','store')->name('store');
+Route::get('/show/{id}','show')->name('show');
+Route::get('/destroy/{id}','destroy')-> name('destroy');
+
+});
 
 
 

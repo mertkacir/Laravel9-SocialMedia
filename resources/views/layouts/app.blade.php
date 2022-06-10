@@ -23,6 +23,9 @@
 
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-menu')
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('post.create') }}">Create Post</a>
+           </li>
 
             <!-- Page Heading -->
             @if (isset($header))

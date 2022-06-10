@@ -63,4 +63,16 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class,'role_users');
     }
+
+    public function friends()
+    {
+        return $this->belongsToMany(User::class,'friendships','request','accept');
+    }
+
+    public function toArray()
+    {
+        return[
+            'friends'=>$this->friends,
+        ];
+    }
 }

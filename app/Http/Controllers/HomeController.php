@@ -96,7 +96,7 @@ class HomeController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/registeruser');
+        return redirect('/login');
     }
 
     public function loginadmincheck(Request $request)

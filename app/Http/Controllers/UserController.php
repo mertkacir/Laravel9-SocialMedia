@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
@@ -80,5 +81,10 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addfriend($id)
+    {
+        $addUser=auth()->user()->attach[$id];
     }
 }

@@ -10,7 +10,12 @@
                 <li><a href="{{route('references')}}">References</a></li>
                 <li><a href="{{route('contact')}}">Contact Us</a></li>
                 <li><a href="{{route('faq')}}">FAQ</a></li>
-
+                <li>
+                    <a class="nav-link" href="{{ route('post.create') }}">Create Post</a>
+                    <ul>
+                        <li><a href="/posts">Show Posts</a>
+                    </ul>
+               </li>
 				<li>
 					<a href="#" title="">timeline</a>
 					<ul>
@@ -27,7 +32,8 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#" title="">account settings</a>
+                    @auth
+					<a href="#" title="">{{Auth::user()->name}}</a>
 					<ul>
 						<a href="/logoutuser">log out</a>
 						<li><a href="edit-account-setting.html" title="">edit account setting</a></li>
@@ -39,7 +45,9 @@
 						<li><a href="inbox.html" title="">Inbox</a></li>
 						<li><a href="notifications.html" title="">notifications page</a></li>
 					</ul>
+                    @endauth
 				</li>
+
 
 			</ul>
 

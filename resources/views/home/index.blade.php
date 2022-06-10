@@ -128,7 +128,8 @@
 											<img src="{{asset('assets')}}/images/resources/admin2.jpg" alt="">
 										</figure>
 										<div class="newpst-input">
-											<form method="post">
+                                            @auth
+											<form method="post" action="{{route('storecomment')}}">
 												<textarea rows="2" placeholder="write something"></textarea>
 												<div class="attachments">
 													<ul>
@@ -162,6 +163,7 @@
 													</ul>
 												</div>
 											</form>
+                                            @endauth
 										</div>
 									</div>
 								</div><!-- add post new box -->
