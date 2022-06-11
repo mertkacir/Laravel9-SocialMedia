@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-20">
             <div class="card">
                 <div class="card-header">Create Post</div>
                 <div class="card-body">
@@ -18,7 +18,6 @@
                         <div class="mb-3">
                             <label class="label">Post Body: </label>
                             <textarea name="body" rows="10" cols="30" class="form-control" required></textarea>
-                            <h6 class="mb-3">Image</h6>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Add Image</label>
                                 <input class="form-control" type="file" name="image" id="formFile">

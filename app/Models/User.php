@@ -67,7 +67,7 @@ class User extends Authenticatable
 
     public function friends()
     {
-        return $this->hasMany('App\Friend');
+        return $this->hasMany(Friend::class);
     }
     public function posts() {
         return $this->hasMany(Post::class);
@@ -81,6 +81,11 @@ class User extends Authenticatable
     }
     public function likes() {
         return $this->hasMany(Like::class);
+    }
+
+    public static function getUserId($name){
+        $getUserId = User::select('id')->where('name',$name)->first();
+        return $getUserId->id;
     }
 
 }

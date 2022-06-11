@@ -20,7 +20,7 @@
 					<a href="#" title="">timeline</a>
 					<ul>
 						<li><a href="time-line.html" title="">timeline</a></li>
-						<li><a href="timeline-friends.html" title="">timeline friends</a></li>
+						<li><a href="/login" title="">Login</a></li>
 						<li><a href="timeline-groups.html" title="">timeline groups</a></li>
 						<li><a href="timeline-pages.html" title="">timeline pages</a></li>
 						<li><a href="timeline-photos.html" title="">timeline photos</a></li>
@@ -36,7 +36,7 @@
 					<a href="#" title="">{{Auth::user()->name}}</a>
 					<ul>
 						<a href="/logoutuser">log out</a>
-						<li><a href="edit-account-setting.html" title="">edit account setting</a></li>
+						<li><a href="/users" title="">Users</a></li>
 						<li><a href="edit-interest.html" title="">edit-interest</a></li>
 						<li><a href="edit-password.html" title="">edit-password</a></li>
 						<li><a href="/userpanel" title="">edit profile basics</a></li>

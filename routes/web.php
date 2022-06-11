@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FriendController;
 use App\Http\Controllers\MessageController as ControllersMessageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -35,6 +36,8 @@ Route::get('/posts',[PostController::class,'index'])->name('posts');
 Route::post('/comment/store',[CommentController::class,'store'])->name('store');
 Route::get('/users',[HomeController::class,'listUser']);
 Route::get('/users/{id}',[HomeController::class,'showUser'])->name('user.show');
+Route::get('/friend',[FriendController::class,'index'])->middleware('auth');
+Route::get('/addfriend/{name}',[UserController::class,'addfriend'])->name('addfriend');
 
 //************** Comment Routes *******************
 Route::prefix('/comment')->name('comment.')->controller(CommentController::class)->group(function (){

@@ -2,13 +2,7 @@
 <html lang="en">
 
 <head>
-    <style>
-        .container {
-            display:flex;
-          flex-direction: row-reverse;
-          left: 50px;
-        }
-        </style>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield("title")</title>

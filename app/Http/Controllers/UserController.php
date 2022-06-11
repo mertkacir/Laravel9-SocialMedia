@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Friend;
 use App\Models\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -83,8 +86,20 @@ class UserController extends Controller
         //
     }
 
-    public function addfriend($id)
+    public function addfriend($name)
     {
-        $addUser=auth()->user()->attach[$id];
+        $userCount = User::where('name',$name)->count();
+        if($userCount>0){
+            $user_id_1 = Auth::user()->id;
+            $user_id_2 = User::getUserId($name);
+            $friend = new Friend();
+            $friend -> user_id_1 = $user_id_1;
+            $friend -> user_id_2 = $user_id_2;
+            $friend->save();
+            echo "Friend request send to ". $name;
+        }
+        else{
+            abort(404);
+        }
     }
 }

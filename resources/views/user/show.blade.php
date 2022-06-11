@@ -9,9 +9,9 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <img src="{{ $user->profile_picture }}" alt="">
-                            Welcome {{ $user->name }}
+                             {{ $user->name }} Profile
                             <div class="pull-right">
-                                <a href="#" class="btn btn-link">Add Friend</a>
+                                <a href="{{route('addfriend',['name'=> $user->name])}}" class="btn btn-link">Add Friend</a>
                                 <a href="#" class="btn btn-link">View Friends</a>
                             </div>
                         </h3>
