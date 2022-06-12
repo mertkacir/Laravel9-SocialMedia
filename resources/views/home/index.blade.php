@@ -170,6 +170,7 @@
 								<div class="loadMore">
 								<div class="central-meta item">
 									<div class="user-post">
+
 										<div class="friend-info">
 											<figure>
 												<img src="{{asset('assets')}}/images/resources/friend-avatar10.jpg" alt="">

@@ -119,7 +119,7 @@ Route::prefix('/image')->name('image.')->controller(ImageController::class)->gro
 Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function (){
     Route::get('/','index')-> name('index');
     Route::get('/show/{id}','show')-> name('show');
-    Route::get('/update/{id}','update')-> name('update');
+    Route::post('/update/{id}','update')-> name('update');
     Route::get('/destroy/{id}','destroy')-> name('destroy');
 
 });

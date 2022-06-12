@@ -10,6 +10,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     <h3>Detail Message Data</h3>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.message.index') }}"
+                        class="text-decoration-none">Messages</a></li>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive" >

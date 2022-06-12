@@ -10,6 +10,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     <h3>Detail Message Data</h3>
+
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive" >
@@ -20,29 +21,12 @@
                                 </tr>
 
                                 <tr>
-                                    <th>Name & Surname </th>
-                                    <td>{{$data->name}}</td>
+                                    <th>Question </th>
+                                    <td>{{$data->question}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Phone Number</th>
-                                    <td>{{$data->phone}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Email</th>
-                                    <td>{{$data->email}}</td>
-                                </tr>
-
-                                <tr>
-                                    <th>Subject</th>
-                                    <td>{{$data->subject}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Message</th>
-                                    <td>{{$data->message}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Ip Number</th>
-                                    <td>{{$data->ip}}</td>
+                                    <th>Answer</th>
+                                    <td>{!! $data->answer !!}</td>
                                 </tr>
                                 <tr>
                                     <th>Status</th>
@@ -60,7 +44,7 @@
                                 <tr>
                                     <th>Admin Note:</th>
                                     <td>
-                                        <form role="form" action="{{route('admin.message.update',['id'=>$data->id ])}}" method="post" >
+                                        <form role="form" action="{{route('admin.faq.update',['id'=>$data->id ])}}" method="post" >
                                             @csrf
 
                                        <textarea    cols="100"  id="note" name="note" >

@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-header">Create Post</div>
                 <div class="card-body">
-                    <form method="post" action="{{ route('post.store') }}">
+                    <form method="post" action="{{ route('post.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label class="label">Post Title: </label>

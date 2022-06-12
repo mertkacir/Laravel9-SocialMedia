@@ -27,7 +27,7 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'image'
     ];
 
     /**
@@ -91,5 +91,8 @@ class User extends Authenticatable
         $getUserId = User::select('id')->where('name',$name)->first();
         return $getUserId->id;
     }
+    public function isAdministrator() {
+        return $this->roles()->where('name', 'admin')->exists();
+     }
 
 }

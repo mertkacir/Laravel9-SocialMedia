@@ -17,7 +17,9 @@
                     <td>{{ $post->title }}</td>
                     <td>
                         <a href="{{ route('post.show', $post->id) }}" class="btn btn-primary">Show Post</a>
+                        @if(\Illuminate\Support\Facades\Auth::id()==$post->user_id)
                         <a href="{{route('post.destroy', $post->id)}}" class="btn btn-danger">Delete Post</a>
+                        @endif
                     </td>
                 </tr>
                 @endforeach

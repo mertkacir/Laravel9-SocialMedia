@@ -58,7 +58,12 @@ class FaqController extends Controller
      */
     public function show($id)
     {
-        //
+        $data= Faq::find($id);
+        $data->status='Read';
+        $data->save();
+        return view('admin.faq.show',[
+            'data'=> $data
+        ]);
     }
 
     /**
@@ -88,7 +93,7 @@ class FaqController extends Controller
     public function update(Request $request, $id)
     {
         {
-            
+
             $data= Faq::find($id);
             $data->question  = $request->question;
             $data->answer  = $request->answer;

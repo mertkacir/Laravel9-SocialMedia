@@ -18,11 +18,11 @@
                     </p>
                     <td>
                         @if ($post->image)
-                            <img src="{{Storage::url($post->image)}}" style="height: 40px;">
+                            <img src="{{Storage::url($post->image)}}" style="height: 300px; width:300px;">
 
                         @endif
                     </td>
-                    
+
                     <hr />
                     <h4>Display Comments</h4>
                     @include('partials._comment_replies', ['comments' => $post->comments, 'post_id' => $post->id])

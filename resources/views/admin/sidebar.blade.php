@@ -15,14 +15,14 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/admin" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Home</a>
 
                     <a href="/admin/category" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Category</a>
-                    <a href="/admin/comment" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Comments</a>
                     <a href="{{route('admin.faq.index')}}" class="nav-item nav-link"><ion-icon size="large" name="help-circle-outline" style="vertical-align: middle;"></ion-icon></i> FAQ</a>
                     <a href="{{route('admin.message.index')}}" class="nav-item nav-link"><ion-icon size="large" name="mail-outline" style="vertical-align: middle;"></ion-icon></i> Messages</a>
                     <a href="/admin/user" class="nav-item nav-link"><ion-icon size="large" name="people-outline" style="vertical-align: middle;"></ion-icon></i> Users</a>
                     <a href="/admin/social" class="nav-item nav-link"><ion-icon size="large" name="share-social-outline" style="vertical-align: middle;"></ion-icon></i> Social</a>
+                    <a href="/admin/friend/0" class="nav-item nav-link"><ion-icon size="large" name="person-add-outline" style="vertical-align: middle;"></ion-icon> Friends</a>
                     <a href="/admin/setting" class="nav-item nav-link"><ion-icon size="large" name="settings-outline" style="vertical-align: middle;"></ion-icon> Settings</a>
 
                 </div>
