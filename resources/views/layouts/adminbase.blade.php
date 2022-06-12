@@ -41,7 +41,6 @@
   @include("admin.sidebar")
 @show
 
-
 @yield('content')
 @include("admin.footer")
 @yield('foot')

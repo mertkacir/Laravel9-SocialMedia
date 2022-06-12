@@ -22,6 +22,7 @@
 @yield("head")
 </head>
 <body>
+
 @include("home.header")
 
 

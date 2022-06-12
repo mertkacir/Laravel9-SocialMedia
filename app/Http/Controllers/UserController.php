@@ -97,6 +97,7 @@ class UserController extends Controller
             $friend -> user_id_2 = $user_id_2;
             $friend->save();
             echo "Friend request send to ". $name;
+            
         }
         else{
             abort(404);

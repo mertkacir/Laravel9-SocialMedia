@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Faq;
+use App\Models\Friend;
 use App\Models\Setting;
 use App\Models\Message;
 use App\Models\User;
