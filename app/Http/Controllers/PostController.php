@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 
 class PostController extends Controller
 {
@@ -31,7 +33,9 @@ class PostController extends Controller
         $post =  new Post();
         $post->title = $request->get('title');
         $post->body = $request->get('body');
-        $post->image = $request->get('image');
+        if ($request->file('image')){
+            $post->image=$request->file('image')->store('images');
+        }
         $post->user_id = Auth::user()->id;
 
         $post->save();
@@ -49,6 +53,9 @@ class PostController extends Controller
     public function destroy(Post $post,$id)
     {
         $post= Post::find($id);
+        if($post->image && Storage::disk('public')->exists($post->image)){
+            Storage::delete($post->image);
+        }
         $post->delete();
         return redirect('posts');
     }

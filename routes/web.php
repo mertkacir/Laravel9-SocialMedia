@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\AdminContentController;
+use App\Http\Controllers\AdminPanel\AdminFriendController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\MessageController;
@@ -147,5 +148,15 @@ Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->g
 
 
 });
+//************** Friend Routes *******************
+Route::prefix('/friend')->name('friend.')->controller(AdminFriendController::class)->group(function (){
+    Route::get('/{slug}','index')->name('index');
+    Route::get('/create','create')->name('create');
+    Route::post('/store','store')->name('store');
+    Route::get('/show/{id}','show')->name('show');
+    Route::get('/edit/{id}','edit')->name('edit');
+    Route::get('/destroy/{id}','destroy')-> name('destroy');
+
+    });
 });
 });

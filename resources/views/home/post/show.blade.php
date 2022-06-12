@@ -22,6 +22,7 @@
 
                         @endif
                     </td>
+                    
                     <hr />
                     <h4>Display Comments</h4>
                     @include('partials._comment_replies', ['comments' => $post->comments, 'post_id' => $post->id])

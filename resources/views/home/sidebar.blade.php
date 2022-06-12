@@ -32,7 +32,7 @@
                         <li>
 
                             <div style="mb-3">
-                                {{ $friend1->$user->name 'user_name' => $this->user ? $this->user->name : '' }}
+
                                 <div>
                                     <a href="#" class="btn btn-primary rounded-pill m-1">Accept</a>
                                     <a href="#" class="btn btn-danger rounded-pill m-1">Cancel</a>
@@ -52,13 +52,7 @@
                     <ul>
                         <a href="/logoutuser">log out</a>
                         <li><a href="/users" title="">Users</a></li>
-                        <li><a href="edit-interest.html" title="">edit-interest</a></li>
-                        <li><a href="edit-password.html" title="">edit-password</a></li>
-                        <li><a href="/userpanel" title="">edit profile basics</a></li>
-                        <li><a href="edit-work-eductation.html" title="">edit work educations</a></li>
-                        <li><a href="messages.html" title="">message box</a></li>
-                        <li><a href="inbox.html" title="">Inbox</a></li>
-                        <li><a href="notifications.html" title="">notifications page</a></li>
+                        <li><a href="/userpanel" title="">Edit Profile</a></li>
                     </ul>
                 @endauth
             </li>

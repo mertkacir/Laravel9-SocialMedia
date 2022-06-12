@@ -17,9 +17,11 @@ class HomeController extends Controller
     public function index()
     {
         $page = 'home';
+        $sliderdata='home';
         $setting = Setting::first();
         return view('home.index',[
             'page' => $page,
+            'sliderdata'=>$sliderdata,
             'setting' => $setting,
         ]);
     }
